@@ -48,7 +48,7 @@ racecar() {
       echo "Downloading files now..."
       scp -rp racecar@$RACECAR_IP:/home/racecar/Documents $RACECAR_ABSOLUTE_PATH/backup/version_$numfiles
     elif [ $# -eq 1 ] && [ "$1" = "sync" ]; then
-      echo "Copying your local copy of the RACECAR library to your car (${RACECAR_IP})..."
+      echo "Copying your local copy of the RACECAR project to your car (${RACECAR_IP})..."
       rsync -azP --delete "$RACECAR_ABSOLUTE_PATH"/ racecar@"$RACECAR_IP":"$RACECAR_DESTINATION_PATH"
     elif [ $# -eq 1 ] && [ "$1" = "test" ]; then
       echo "racecar tool set up successfully!"
